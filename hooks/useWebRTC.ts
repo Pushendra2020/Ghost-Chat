@@ -246,16 +246,16 @@ export const useWebRTC = (isInitiator: boolean) => {
         const peerConnection = new RTCPeerConnection({
             iceServers: [
                 // --- STUN Server Configuration (Commented out for now) ---
-                // { urls: 'stun:stun.l.google.com:19302' },
+                { urls: 'stun:stun.l.google.com:19302' },
 
                 // --- TURN Server Configuration ---
-                {
-                    urls: process.env.NEXT_PUBLIC_TURN_SERVER_URL || 'turn:your.turn.server.url:3478', // <-- Replace with your actual TURN server URL
-                    username: process.env.NEXT_PUBLIC_TURN_SERVER_USERNAME || '12160fa0408faaf6a4c131ad',
-                    credential: process.env.NEXT_PUBLIC_TURN_SERVER_CREDENTIAL || 'vIJSeLLsGYk6NzqM'
-                }
+                // {
+                //     urls: process.env.NEXT_PUBLIC_TURN_SERVER_URL || 'turn:your.turn.server.url:3478', // <-- Replace with your actual TURN server URL
+                //     username: process.env.NEXT_PUBLIC_TURN_SERVER_USERNAME || '12160fa0408faaf6a4c131ad',
+                //     credential: process.env.NEXT_PUBLIC_TURN_SERVER_CREDENTIAL || 'vIJSeLLsGYk6NzqM'
+                // }
             ],
-            iceTransportPolicy: 'relay'
+            //iceTransportPolicy: 'relay'
         });
         peerConnectionRef.current = peerConnection;
 
