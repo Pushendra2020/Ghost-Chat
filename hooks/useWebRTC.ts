@@ -250,9 +250,9 @@ export const useWebRTC = (isInitiator: boolean) => {
 
                 // --- TURN Server Configuration ---
                 {
-                    urls: process.env.NEXT_PUBLIC_TURN_SERVER_URL || 'turn:your.turn.server.url:3478', // <-- Replace with your actual TURN server URL
-                    username: process.env.NEXT_PUBLIC_TURN_SERVER_USERNAME || '12160fa0408faaf6a4c131ad',
-                    credential: process.env.NEXT_PUBLIC_TURN_SERVER_CREDENTIAL || 'vIJSeLLsGYk6NzqM'
+                    urls: process.env.TURN_SERVER_URL || 'turn:your.turn.server.url:3478', // <-- Replace with your actual TURN server URL
+                    username: process.env.TURN_SERVER_USERNAME || '12160fa0408faaf6a4c131ad',
+                    credential: process.env.TURN_SERVER_CREDENTIAL || 'vIJSeLLsGYk6NzqM'
                 }
             ],
             iceTransportPolicy: 'relay'
