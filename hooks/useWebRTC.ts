@@ -246,16 +246,8 @@ export const useWebRTC = (isInitiator: boolean) => {
         const peerConnection = new RTCPeerConnection({
             iceServers: [
                 // --- STUN Server Configuration (Commented out for now) ---
-                // { urls: 'stun:stun.l.google.com:19302' },
-
-                // --- TURN Server Configuration ---
-                {
-                    urls: process.env.TURN_SERVER_URL || 'turn:your.turn.server.url:3478', // <-- Replace with your actual TURN server URL
-                    username: process.env.TURN_SERVER_USERNAME || '12160fa0408faaf6a4c131ad',
-                    credential: process.env.TURN_SERVER_CREDENTIAL || 'vIJSeLLsGYk6NzqM'
-                }
+                { urls: 'stun:stun.l.google.com:19302' },
             ],
-            iceTransportPolicy: 'relay'
         });
         peerConnectionRef.current = peerConnection;
 
